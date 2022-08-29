@@ -1,0 +1,31 @@
+.main-header {
+  background-color: #ffffff;
+  position: sticky !important;
+  top: 0;
+  z-index: 1020;
+  height: 80px;
+}
+
+.main-header .indexx-icon {
+  height: 128px;
+  width: 128px;
+}
+
+.main-header .navbar-brand {
+  color: #0179fa !important;
+  font-weight: 600;
+}
+
+.main-header a.nav-link {
+  margin: 0 6px;
+  color: #2b2b2b;
+  padding: 4px 8px;
+  transition: ease-in-out 0.5s;
+}
+
+.main-header a.nav-link:focus,
+.main-header a.nav-link:hover {
+  background: rgba(0, 82, 204, 0.1);
+  border-radius: 5px;
+  color: #0179fa;
+}
