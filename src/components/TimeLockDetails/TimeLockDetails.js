@@ -1,17 +1,19 @@
 import React, {useState} from 'react';
-import "./TimeLock.css"
+import "./TimeLockDetails.css"
 import {Button, Card, Input, Skeleton} from "antd";
-import {Link} from "react-router-dom";
 import {useWeb3React} from "@web3-react/core";
 import {injected} from "../../utils/connectors";
 import {isNoEthereumObject} from "../../utils/errors";
 import {ethers} from "ethers";
 import Web3Utils from "web3-utils"
+import Index500 from "../../assets/icons/indexx500.gif";
+import IndexCrypto from "../../assets/icons/indexcrypto.gif";
+import IndexUsd from "../../assets/icons/indexUsd+.gif";
 
 const options = {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'};
 
 
-const TimeLock = () => {
+const TimeLockDetails = ({lockAddress, currentTab}) => {
     const {active, activate, deactivate} = useWeb3React();
     const [walletAddress, setWalletAddress] = useState("")
     const [details, setDetails] = useState()
@@ -246,7 +248,6 @@ const TimeLock = () => {
             type: "function"
         }
     ];
-    const lockAddress = "0x94C6156Da5DF99b3A529b47b54C6ff480c1440bb";
 
     async function getData() {
         setIsLoading(true)
@@ -279,66 +280,70 @@ const TimeLock = () => {
         });
     };
 
+    const getCardTitle = () => {
+        const text = "Get Vesting Details for :";
+        switch (currentTab) {
+            case "INDEXX500":
+                return <div>{text}<img src={Index500} alt="logo" className="lockIcon"/></div>
+            case "INDEXXCRYPTO":
+                return <div>{text}<img src={IndexCrypto} alt="logo" className="lockIcon"/></div>
+            case "INDEXXUSD+":
+                return <div>{text}<img src={IndexUsd} alt="logo" className="usdLockIcon"/></div>
+            default:
+                return <div>{text}<img src={Index500} alt="logo" className="lockIcon"/></div>
+        }
+    }
+
 
     return (
-        <div>
-            <div className="nav-box">
-                <div className="heading">
-                    Time-Lock Details
+        <div className="timelock-card-container">
+            <Card
+                title={getCardTitle()}
+                style={{width: 600}}
+            >
+                <div className="alignCenter">
+                    <Button
+                        className="connectWalletButton"
+                        onClick={handleConnect} type="primary">
+                        Connect Wallet
+                    </Button>
                 </div>
-                <div className="routing">
-                    <Link to="/transactions">
-                        <Button type="primary" shape="round">View Transactions</Button>
-                    </Link>
+                <Input
+                    onChange={event => setWalletAddress(event.target.value)}
+                    allowClear
+                    addonBefore="Wallet Address"
+                />
+
+                <div className="alignCenter">
+                    <Button disabled={!walletAddress}
+                            onClick={getData}
+                            className="submitButton"
+                            type="primary">Submit
+                    </Button>
                 </div>
-            </div>
-            <div className="timelock-card-container">
-                <Card
-                    title="Get Vesting details"
-                    style={{width: 600}}
-                >
-                    <div className="alignCenter">
-                        <Button className="connectWalletButton" onClick={handleConnect} type="primary">Connect
-                            Wallet</Button>
+
+
+                {isLoading && (
+                    <div className="loadingContainer">
+                        <Skeleton.Input active/>
+                        <Skeleton.Input active/>
+                        <Skeleton.Input active/>
                     </div>
-                    <Input
-                        onChange={event => setWalletAddress(event.target.value)}
-                        allowClear
-                        addonBefore="Wallet Address"
-                    />
+                )}
 
-                    <div className="alignCenter">
-                        <Button disabled={!walletAddress}
-                                onClick={getData}
-                                className="submitButton"
-                                type="primary">Submit
-                        </Button>
-                    </div>
-
-
-                    {isLoading && (
-                        <div className="loadingContainer">
-                            <Skeleton.Input active/>
-                            <Skeleton.Input active/>
-                            <Skeleton.Input active/>
-                        </div>
-                    )}
-
-                    {details && !isLoading && (
-                        <>
-                            <Input readOnly style={{marginTop: 20}} value={details.nextReleaseDate}
-                                   addonBefore="Next Release Date"/>
-                            <Input readOnly style={{marginTop: 20}} value={details.installmentAmount}
-                                   addonBefore="Installment Amount"/>
-                            <Input readOnly style={{marginTop: 10}} value={details.totalAmount}
-                                   addonBefore="Total Lock amount left"/>
-                        </>
-                    )}
-                </Card>
-            </div>
+                {details && !isLoading && (
+                    <>
+                        <Input readOnly style={{marginTop: 20}} value={details.nextReleaseDate}
+                               addonBefore="Next Release Date"/>
+                        <Input readOnly style={{marginTop: 20}} value={details.installmentAmount}
+                               addonBefore="Installment Amount"/>
+                        <Input readOnly style={{marginTop: 10}} value={details.totalAmount}
+                               addonBefore="Total Lock amount left"/>
+                    </>
+                )}
+            </Card>
         </div>
-
     )
 };
 
-export default TimeLock;
+export default TimeLockDetails;

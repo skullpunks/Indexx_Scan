@@ -32,6 +32,7 @@
     font-weight: 500;
     letter-spacing: 0;
     text-align: center;
+    padding:0;
 }
 
 .ant-card-bordered {
@@ -82,4 +83,15 @@
 
 .ant-skeleton-element .ant-skeleton-input {
     width: 100%;
+}
+
+.lockIcon {
+    height: 80px;
+    margin-left: -20px;
+    margin-top: -5px;
+}
+
+.usdLockIcon {
+    height: 64px;
+    margin-top: 3px;
 }

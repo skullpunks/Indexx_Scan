@@ -1,0 +1,69 @@
+.ant-table-wrapper {
+    border: 1px solid #94DDF9;
+    border-radius: 8px;
+}
+
+.ant-table-thead > tr > th {
+    background: #dff5fd;
+    border: none !important;
+    font-family: Avenir, serif;
+    font-weight: 900;
+    letter-spacing: 0;
+    color: #5F5F5F;
+}
+
+.ant-table table {
+    padding: 10px;
+}
+
+.ant-table-pagination.ant-pagination {
+    justify-content: center;
+}
+
+.ant-pagination-item-active a {
+    color: white;
+}
+
+.ant-pagination-item-active a:hover {
+    color: white;
+}
+
+.ant-pagination-item-active {
+    background: #2F71F0;
+    border-color: #2F71F0;
+}
+
+.ant-tabs-tab-active {
+    background: #dff6fd !important;
+}
+
+.selectContract {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.text {
+    padding-right: 10px;
+    font-family: Avenir, serif;
+    font-weight: 900;
+    letter-spacing: 0;
+    color: #5F5F5F;
+}
+
+.ant-input-group > .ant-input:first-child, .ant-input-group-addon:first-child {
+    border-color: #94DDF9;
+    width: 300px;
+}
+
+.coinIcon {
+    height: 100px;
+    width: 100px;
+}
+
+
+.UsdcoinIcon {
+    height: 75px;
+    width: 75px;
+}

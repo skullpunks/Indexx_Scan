@@ -1,12 +1,13 @@
 import React from "react";
 import {Navigation} from 'react-minimal-side-navigation';
 import 'react-minimal-side-navigation/lib/ReactMinimalSideNavigation.css';
+import "./Footer.css"
 
 const Footer = () => {
     return (
         <footer className="site-footer">
             <div className="container">
-                <div className="row">
+                <div className="footer-flex">
                     <div className="col-xs-6 col-md-4 footercentre">
                         <a href="/" id="1067941554">
                             <img src="https://lirp.cdn-website.com/5afbaf73/dms3rep/multi/opt/index-38-238w.png"
@@ -69,7 +70,6 @@ const Footer = () => {
                             </ul>
                         </div>
                     </div>
-
                     <div className="col-xs-6 col-md-4 footercentre2">
                         <h6>Links</h6>
 
