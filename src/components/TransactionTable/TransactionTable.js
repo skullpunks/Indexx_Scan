@@ -8,6 +8,9 @@ import IndexUsd from "../../assets/icons/indexUsd+.gif";
 
 const {Option} = Select;
 const {Search} = Input;
+const TX_URL = 'https://bscscan.com/tx';
+const ADDRESS_URL = 'https://bscscan.com/address';
+const BLOCK_URL = 'https://bscscan.com/block/';
 
 const columns = [
     {
@@ -16,7 +19,7 @@ const columns = [
         key: 'TxnHash',
         width: "15%",
         ellipsis: true,
-        render: (text) => <Tooltip placement="topLeft" title={text}><a><b>{text}</b></a></Tooltip>,
+        render: (text) => <Tooltip placement="topLeft" title={text}><a href={`${TX_URL}/${text}`} target="_blank" rel="noopener noreferrer"><b>{text}</b></a></Tooltip>,
     },
     {
         title: 'MethodId',
@@ -29,7 +32,7 @@ const columns = [
         dataIndex: 'Block',
         key: 'Block',
         width: "10%",
-        render: (text) => <Tooltip placement="topLeft" title={text}><a><b>{text}</b></a></Tooltip>,
+        render: (text) => <Tooltip placement="topLeft" title={text}><a href={`${BLOCK_URL}/${text}`} target="_blank" rel="noopener noreferrer"><b>{text}</b></a></Tooltip>,
     },
     {
         title: 'From',
@@ -37,7 +40,7 @@ const columns = [
         key: 'From',
         width: "15%",
         ellipsis: true,
-        render: (text) => <Tooltip placement="topLeft" title={text}><a><b>{text}</b></a></Tooltip>,
+        render: (text) => <Tooltip placement="topLeft" title={text}><a href={`${ADDRESS_URL}/${text}`} target="_blank" rel="noopener noreferrer"><b>{text}</b></a></Tooltip>,
     },
     {
         title: '',

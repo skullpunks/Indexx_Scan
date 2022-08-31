@@ -11,7 +11,7 @@ const Footer = () => {
                     <div className="col-xs-6 col-md-4 footercentre">
                         <a href="/" id="1067941554">
                             <img src="https://lirp.cdn-website.com/5afbaf73/dms3rep/multi/opt/index-38-238w.png"
-                                 width="50%" height="22%"/>
+                                 width="50%" height="22%" alt=""/>
                         </a>
                         <br/><br/><br/>
                         <p>
@@ -45,24 +45,24 @@ const Footer = () => {
                         <div className="social-wrapper">
                             <ul>
                                 <li>
-                                    <a href="https://twitter.com/" target="_blank">
+                                    <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer">
                                         <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/twitter-128.png"
                                              alt="Twitter Logo" className="twitter-icon"></img></a>
                                 </li>
                                 <li>
-                                    <a href="https://www.facebook.com/" target="_blank">
+                                    <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
                                         <img
                                             src="http://www.iconarchive.com/download/i54037/danleech/simple/facebook.ico"
                                             alt="Facebook Logo" className="facebook-icon"></img></a>
                                 </li>
                                 <li>
-                                    <a href="https://play.google.com/" target="_blank">
+                                    <a href="https://play.google.com/" target="_blank" rel="noopener noreferrer">
                                         <img
                                             src="http://icons.iconarchive.com/icons/marcus-roberto/google-play/256/Google-plus-icon.png"
                                             alt="Googleplus Logo" className="googleplus-icon"></img></a>
                                 </li>
                                 <li>
-                                    <a href="https://www.instagram.com/" target="_blank">
+                                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
                                         <img src="https://www.mchenryvillage.com/images/instagram-icon.png"
                                              alt="Youtube Logo" className="youtube-icon"></img></a>
                                 </li>
