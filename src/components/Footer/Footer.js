@@ -15,9 +15,9 @@ const Footer = () => {
                         </a>
                         <br/><br/><br/>
                         <p>
-                            Indexx stock token is the world first coin <br></br>
-                            pegged with world largest stock market <br></br>
-                            index the S&P 500. Pioneered the concept in <br></br>
+                            Indexx stock token is the world first coin <br/>
+                            pegged with world largest stock market <br/>
+                            index the S&P 500. Pioneered the concept in <br/>
                             the cryptocurrency space.
                         </p>
                     </div>
@@ -26,45 +26,45 @@ const Footer = () => {
                             Indexx
                         </h6>
                         <p>
-                            550 Newport Center Drive<br></br>
-                            Newport Beach,<br></br>
-                            CA 92660 United State<br></br>
-                            <br></br>
                             949-228-9079
-                            <br></br>
-                            <br></br>
+                            <br/> <br/> <br/>
 
-                            indexx Limited, CUB Financial Centre,<br></br>
-                            GF5, Lyford Cay, Nassau, Bahamas.<br></br>
+                            indexx Limited, CUB Financial Centre,<br/>
+                            GF6, Lyford Cay, Nassau, Bahamas.<br/> <br/> <br/>
+
+                            550 Newport Center Drive<br/>
+                            Newport Beach,<br/>
+                            CA 92660 United State<br/>
+                            <br/>
                         </p>
                         <p className="copyright-text">Copyright &copy; 2022 All Rights Reserved by &nbsp;
                             <a href="https://www.indexx.ai/">Indexx</a>.
                         </p>
-                        <br></br>
+                        <br/>
 
                         <div className="social-wrapper">
                             <ul>
                                 <li>
                                     <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer">
                                         <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/twitter-128.png"
-                                             alt="Twitter Logo" className="twitter-icon"></img></a>
+                                             alt="Twitter Logo" className="twitter-icon"/></a>
                                 </li>
                                 <li>
                                     <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
                                         <img
                                             src="http://www.iconarchive.com/download/i54037/danleech/simple/facebook.ico"
-                                            alt="Facebook Logo" className="facebook-icon"></img></a>
+                                            alt="Facebook Logo" className="facebook-icon"/></a>
                                 </li>
                                 <li>
                                     <a href="https://play.google.com/" target="_blank" rel="noopener noreferrer">
                                         <img
                                             src="http://icons.iconarchive.com/icons/marcus-roberto/google-play/256/Google-plus-icon.png"
-                                            alt="Googleplus Logo" className="googleplus-icon"></img></a>
+                                            alt="Googleplus Logo" className="googleplus-icon"/></a>
                                 </li>
                                 <li>
                                     <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
                                         <img src="https://www.mchenryvillage.com/images/instagram-icon.png"
-                                             alt="Youtube Logo" className="youtube-icon"></img></a>
+                                             alt="Youtube Logo" className="youtube-icon"/></a>
                                 </li>
 
                             </ul>

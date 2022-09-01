@@ -1,5 +1,5 @@
 import {Select, Table, Tag} from 'antd';
-import React from 'react';
+import React, {useState} from 'react';
 import "./TransactionTable.css"
 import {Input, Tooltip} from 'antd';
 import Index500 from "../../assets/icons/indexx500.gif";
@@ -114,6 +114,15 @@ const TransactionTable = ({
         }
     }
 
+    const [pagination, setPagination] = useState({
+        current: 1,
+        pageSize: 10,
+    });
+
+    const handleTableChange = (newPagination) => {
+        setPagination(newPagination)
+    };
+
     return (
         <>
             <div className="actions">
@@ -137,11 +146,13 @@ const TransactionTable = ({
                 </div>
             </div>
             <Table
-                pagination={{ pageSize: 4 }}
+                pagination={pagination}
                 scroll={{ y: 240 }}
                 loading={loading}
                 columns={columns}
-                dataSource={data}/>
+                onChange={handleTableChange}
+                dataSource={data}
+            />
         </>
 
     )
