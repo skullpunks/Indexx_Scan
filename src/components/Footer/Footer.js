@@ -1,9 +1,37 @@
 import React from "react";
 import {Navigation} from 'react-minimal-side-navigation';
 import 'react-minimal-side-navigation/lib/ReactMinimalSideNavigation.css';
+import Instagram from "../../assets/icons/instagram.png";
+import Twitter from "../../assets/icons/twitter.png";
+import YouTube from "../../assets/icons/youtube.png";
+import Reddit from "../../assets/icons/reddit.png";
 import "./Footer.css"
 
 const Footer = () => {
+    const icons = [
+        {
+            src : Instagram,
+            href: "",
+            alt:"Instagram",
+        },
+        {
+            src : Twitter,
+            href: "https://twitter.com/IndexxFinance",
+            alt:"Twitter",
+        },
+        {
+            src : YouTube,
+            href: "",
+            alt:"You-tube",
+        },
+        {
+            src : Reddit,
+            href: "",
+            alt:"Reddit",
+        },
+    ]
+
+
     return (
         <footer className="site-footer">
             <div className="container">
@@ -44,29 +72,12 @@ const Footer = () => {
 
                         <div className="social-wrapper">
                             <ul>
-                                <li>
-                                    <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer">
-                                        <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/twitter-128.png"
-                                             alt="Twitter Logo" className="twitter-icon"/></a>
-                                </li>
-                                <li>
-                                    <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
-                                        <img
-                                            src="http://www.iconarchive.com/download/i54037/danleech/simple/facebook.ico"
-                                            alt="Facebook Logo" className="facebook-icon"/></a>
-                                </li>
-                                <li>
-                                    <a href="https://play.google.com/" target="_blank" rel="noopener noreferrer">
-                                        <img
-                                            src="http://icons.iconarchive.com/icons/marcus-roberto/google-play/256/Google-plus-icon.png"
-                                            alt="Googleplus Logo" className="googleplus-icon"/></a>
-                                </li>
-                                <li>
-                                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
-                                        <img src="https://www.mchenryvillage.com/images/instagram-icon.png"
-                                             alt="Youtube Logo" className="youtube-icon"/></a>
-                                </li>
-
+                                { icons.map( icon => (
+                                    <li>
+                                        <a href={icon.href} target="_blank" rel="noopener noreferrer">
+                                            <img className="social-connect-icons" src={icon.src} alt={icon.alt}/></a>
+                                    </li>
+                                ))}
                             </ul>
                         </div>
                     </div>
